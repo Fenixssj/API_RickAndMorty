@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title style="
+      text-align: center; 
+      color: chartreuse; 
+      font-size: 2rem; 
+      font-weight: bold; 
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+      font-family: 'Comic Sans MS', cursive;">
+      Detalle Del personaje
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true" class="ion-padding custom-content">
+  <ion-card *ngIf="characterDetails" class="custom-card">
+    <ion-card-header class="custom-card-header">
+      <ion-card-title class="custom-card-title">{{ characterDetails.name }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content class="custom-card-content">
+      <img [src]="characterDetails.image" class="custom-image"/>
+      <p><strong>Gender:</strong> {{ characterDetails.gender }}</p>
+      <p><strong>Species:</strong> {{ characterDetails.species }}</p>
+      <p><strong>Status:</strong> {{ characterDetails.status }}</p>
+    </ion-card-content>
+    <ion-button expand="full" color="primary" (click)="goBack()" class="custom-button">
+      Regresar
+    </ion-button>
+  </ion-card>
+</ion-content>
+
